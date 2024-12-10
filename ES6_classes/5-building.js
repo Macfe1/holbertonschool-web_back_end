@@ -1,6 +1,6 @@
 export default class Building {
   constructor(sqft) {
-    if (new.target === Building) {
+    if (this.construtor === Building) {
       throw new Error('Building is an abstract class and cannot be instantiated directly');
     }
 
@@ -15,9 +15,6 @@ export default class Building {
   }
   // eslint-disable-next-line class-methods-use-this
   evacuationWarningMessage() {
-    if (this.constructor === Building) {
-        throw new Error('Class extending Building must override evacuationWarningMessage');
-      }
-      throw new Error('evacuationWarningMessage must be implemented');
-    }
+    throw new Error('Class extending Building must override evacuationWarningMessage');
   }
+}
