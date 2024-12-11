@@ -16,11 +16,11 @@ export default class Car {
   }
 
   cloneCar() {
-    const clonedCar = Object.create(Object.getprototypeOf(this));
+    const clonedCar = Object.create(Object.getPrototypeOf(this));
 
-    clonedCar._brand = 'undefined';
-    clonedCar._motor = 'undefined';
-    clonedCar._color = 'undefined';
+    clonedCar._brand = undefined;
+    clonedCar._motor = undefined;
+    clonedCar._color = undefined;
 
     return clonedCar;
   }
