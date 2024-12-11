@@ -16,7 +16,7 @@ export default class Car {
   }
 
   cloneCar() {
-    const clonedCar = Object.create(this.constructor.prototype);
+    const clonedCar = Object.create(Object.getprototypeOf(this));
 
     clonedCar._brand = undefined;
     clonedCar._motor = undefined;
