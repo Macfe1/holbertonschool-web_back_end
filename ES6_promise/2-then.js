@@ -1,5 +1,5 @@
 export default function handleResponseFromAPI(promise) {
-  promise
+  return promise
     /* eslint-disable no-unused-vars */
     .then((response) => ({
       status: 200,
