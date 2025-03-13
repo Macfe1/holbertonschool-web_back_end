@@ -1,4 +1,4 @@
-#!/usr/binenv pyhton3
+#!/usr/bin/env pyhton3
 """
 This module provides a function to add two floating-point numbers.
 """
