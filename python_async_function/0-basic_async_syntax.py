@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 This module provides an asynchronous function to introduce
 a random delay before returning its value.
