@@ -87,8 +87,8 @@ class Server:
         next_index = current_index
         dictionary = {
             "index": index,
-            "next_index": next_index,
+            "data": data,
             "page_size": page_size,
-            "data": data
+            "next_index": next_index,
         }
         return dictionary
