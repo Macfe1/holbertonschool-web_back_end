@@ -76,12 +76,15 @@ class Server:
 
         data: List[List[Any]] = []
         current_index = index
+        items_count = 0
 
         while (
-            len(data) < page_size and current_index
-            in self.__indexed_dataset
+            items_count < page_size and
+            current_index < len(self.__indexed_dataset)
         ):
-            data.append(self.__indexed_dataset[current_index])
+            if current_index in self.__indexed_dataset:
+                data.append(self.__indexed_dataset[current_index])
+                items_count += 1
             current_index += 1
 
         next_index = current_index
