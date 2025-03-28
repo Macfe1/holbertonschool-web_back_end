@@ -1,4 +1,8 @@
 #!/usr/bin/env python3
+"""
+This module have a class with functions that manage
+a dataset with pagination and HATEOAS
+"""
 
 from typing import Dict, List, Tuple
 import math
@@ -80,7 +84,22 @@ class Server:
 
         return list(data[start:end])
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict[int, int]:
+    def get_hyper(self, page: int = 1,
+                  page_size: int = 10) -> Dict[str, object]:
+        """
+        This function takes a dataset paginated and
+        returns its information as total pages, next page
+        and prev page if their exists
+
+        Args:
+            page (int): The current page number (1-based index).
+            page_size (int): The number of items per page.
+
+        Returns:
+            dictionarie: A dictionarie with the total pages
+            the dataset paginated, the next page and prev page and
+            the page
+        """
 
         data = self.get_page(page, page_size)
         total_pages = math.ceil(len(data) / page_size)
@@ -88,8 +107,11 @@ class Server:
         prev_page = page - 1 if page != 1 else None
 
         dictionary = {
-            "page_size": page_size, "page": page, "data": data,
-            "next_page": next_page, "prev_page": prev_page,
+            "page_size": page_size,
+            "page": page,
+            "data": data,
+            "next_page": next_page,
+            "prev_page": prev_page,
             "total_pages": total_pages
-            }
+        }
         return dictionary
