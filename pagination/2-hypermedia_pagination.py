@@ -103,7 +103,7 @@ class Server:
 
         data = self.get_page(page, page_size)
         total_pages = math.ceil(len(data) / page_size)
-        next_page = page + 1 if page + 1 < total_pages else None
+        next_page = None if page + 1 > total_pages else page + 1
         prev_page = page - 1 if page != 1 else None
 
         dictionary = {
