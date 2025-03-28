@@ -104,7 +104,7 @@ class Server:
         data = self.get_page(page, page_size)
         print("DATA 👁️👁️", data)
         print("LEN DATA 😁", len(data))
-        total_pages = len(data)
+        total_pages = math.ceil(len(self.__dataset) / page_size)
         next_page = None if page + 1 > total_pages else page + 1
         prev_page = page - 1 if page != 1 else None
 
