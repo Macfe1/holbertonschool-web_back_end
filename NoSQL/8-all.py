@@ -16,4 +16,4 @@ if __name__ == "__main__":
             list: A list of all documents in the collection,
             or an empty list if there are none.
         """
-        return list(mongo_collection)
+        return list(mongo_collection.find())
