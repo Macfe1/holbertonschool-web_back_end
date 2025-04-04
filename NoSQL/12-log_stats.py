@@ -10,16 +10,6 @@ the 'nginx' collection. It then calculates and displays:
 - The total number of documents (logs)
 - The number of logs for each HTTP method: GET, POST, PUT, PATCH, DELETE
 - The number of logs with method=GET and path=/status
-
-Example output format:
-94778 logs
-Methods:
-    method GET: 93842
-    method POST: 229
-    method PUT: 0
-    method PATCH: 0
-    method DELETE: 0
-47415 status check
 """
 
 from pymongo import MongoClient
