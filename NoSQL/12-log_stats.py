@@ -13,13 +13,13 @@ from pymongo import MongoClient
 client = MongoClient('mongodb://127.0.0.1:27017')
 collection = client.logs.nginx
 
-total_documentos = len(list(collection.find({})))
-total_get = len(list(collection.find({"method": "GET"})))
-total_post = len(list(collection.find({"method": "POST"})))
-total_put = len(list(collection.find({"method": "PUT"})))
-total_patch = len(list(collection.find({"method": "PATCH"})))
-total_delete = len(list(collection.find({"method": "DELETE"})))
-status = len(list(collection.find({"method": "GET", "path": "/status"})))
+total_documentos = collection.find({}).count()
+total_get = collection.find({"method": "GET"}).count()
+total_post = collection.find({"method": "POST"}).count()
+total_put = collection.find({"method": "PUT"}).count()
+total_patch = collection.find({"method": "PATCH"}).count()
+total_delete = collection.find({"method": "DELETE"}).count()
+status = collection.find({"method": "GET", "path": "/status"}).count()
 
 print(f"{total_documentos} logs")
 print("Methods:")
