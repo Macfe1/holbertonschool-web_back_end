@@ -14,12 +14,14 @@ the 'nginx' collection. It then calculates and displays:
 
 from pymongo import MongoClient
 
+
 def empty_fucntion():
     """
     This is an empty functions
     there is no args in this function
     """
     pass
+
 
 client = MongoClient('mongodb://127.0.0.1:27017')
 collection = client.logs.nginx
