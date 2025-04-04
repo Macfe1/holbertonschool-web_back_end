@@ -12,7 +12,11 @@ the 'nginx' collection. It then calculates and displays:
 - The number of logs with method=GET and path=/status
 """
 
+
 from pymongo import MongoClient
+
+if __name__ == "__main__":
+    pass
 
 client = MongoClient('mongodb://127.0.0.1:27017')
 collection = client.logs.nginx
@@ -33,7 +37,3 @@ print(f"\tmethod PUT: {total_put}")
 print(f"\tmethod PATCH: {total_patch}")
 print(f"\tmethod DELETE: {total_delete}")
 print(f"{status} status check")
-
-
-if __name__ == "__main__":
-    pass
