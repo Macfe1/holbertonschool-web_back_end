@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
-This script provides basic statistics about Nginx logs stored in a MongoDB collection.
+This script provides basic statistics about Nginx
+logs stored in a MongoDB collection.
 
-It connects to the MongoDB instance running locally, accesses the 'logs' database and
+It connects to the MongoDB instance running locally,
+accesses the 'logs' database and
 the 'nginx' collection. It then calculates and displays:
 
 - The total number of documents (logs)
