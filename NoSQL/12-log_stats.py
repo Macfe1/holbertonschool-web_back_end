@@ -15,11 +15,12 @@ the 'nginx' collection. It then calculates and displays:
 from pymongo import MongoClient
 
 
-if __name__ == "__main__":
-
+def main():
+    """
+    docs
+    """
     client = MongoClient('mongodb://127.0.0.1:27017')
     collection = client.logs.nginx
-
     total_documentos = collection.count_documents({})
     total_get = collection.count_documents({"method": "GET"})
     total_post = collection.count_documents({"method": "POST"})
@@ -27,7 +28,6 @@ if __name__ == "__main__":
     total_patch = collection.count_documents({"method": "PATCH"})
     total_delete = collection.count_documents({"method": "DELETE"})
     status = collection.count_documents({"method": "GET", "path": "/status"})
-
     print(total_documentos, "logs")
     print("Methods:")
     print(f"\tmethod GET: {total_get}")
@@ -36,3 +36,7 @@ if __name__ == "__main__":
     print(f"\tmethod PATCH: {total_patch}")
     print(f"\tmethod DELETE: {total_delete}")
     print(f"{status} status check")
+
+
+if __name__ == "__main__":
+    main()
