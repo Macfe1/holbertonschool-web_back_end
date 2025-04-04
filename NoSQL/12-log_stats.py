@@ -30,6 +30,3 @@ print(f"\tmethod PATCH: {total_patch}")
 print(f"\tmethod DELETE: {total_delete}")
 print(f"{status} status check")
 
-
-if __name__ == "__main__":
-    pass
