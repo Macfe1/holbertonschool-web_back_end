@@ -9,8 +9,3 @@ process.stdin.on('end', () => {
   console.log('This important software is now closing');
   process.exit();
 });
-
-process.on('SIGINT', () => {
-  console.log('\nThis important software is now closing');
-  process.exit();
-});
