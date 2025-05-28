@@ -10,13 +10,12 @@ app.get('/', (req, res) => {
 app.get('/students', (req, res) => {
   countStudent(process.argv[2])
     .then((result) => {
-      res.send(`This is the list of our students\n ${result}`);
+      res.end(`This is the list of our students\n ${result}`);
     })
     .catch(() => {
       res.statusCode = 500;
       res.end('This is the list of our students\nCannot load the database');
     });
-
 });
 
 app.listen(1245);
